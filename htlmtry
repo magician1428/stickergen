@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+window.onload = function() {
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    var text = 'Sticker 1';
+
+    context.font = '20px Arial';
+    context.fillStyle = 'blue';
+    context.fillText(text, 10, 50);
+
+    var dataUrl = canvas.toDataURL(); // Creates a Base64 string of the image
+
+    // You can then append this dataUrl as the source for an image
+    var img = new Image();
+    img.src = dataUrl;
+    document.body.appendChild(img);
+};
+</script>
+
+</body>
+</html>
